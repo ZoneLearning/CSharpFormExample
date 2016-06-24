@@ -32,11 +32,13 @@ namespace OtobusOtomasyonu
             {
                 //Her bir koltuk birer buton
                 Button seat = new Button();
+                seat.ContextMenuStrip = contextMenuStrip1;
+                seat.MouseDown += Seat_MouseDown;
                 seat.Width = 40;
                 seat.Height = 40;
                 seat.Text = i.ToString();
                 //son 4'lü yanyana dursun diye sondan 3 önceki elamanı 20 ilerlettik. ( ortalı olsun diye)
-                if (seatNumber - 3 == i) 
+                if (seatNumber - 3 == i)
 
                     seat.Margin = new Padding(20, 0, 0, 0);
 
@@ -44,7 +46,7 @@ namespace OtobusOtomasyonu
                     seat.Margin = new Padding(0);
 
                 else if (order * 4 - 2 == i)//orta kapıyı bulup orta kapının karşısına gelen koltuğun sağına koltuk gelmemesini sağlayan koşul                
-                seat.Margin = new Padding(0, 0, 120, 0);
+                    seat.Margin = new Padding(0, 0, 120, 0);
 
                 else if (i % 4 == 3 && i < (order - 1) * 4) //kapıdan çnceki koltuklarda koridor koltuk numarasının 4'e modunun 3 olduğu durumdur.
 
@@ -57,8 +59,13 @@ namespace OtobusOtomasyonu
                 else // bu koşullardan biri değilse normal koltuktur. Boşluksuz hizalanmalı.
                     seat.Margin = new Padding(0);
                 //koltugu panele ekledik.
-           flowLayoutPanel1.Controls.Add(seat);
+                flowLayoutPanel1.Controls.Add(seat);
             }
+        }
+        Button clicked;
+        private void Seat_MouseDown(object sender, MouseEventArgs e)
+        {
+            clicked = (Button)sender;
         }
 
         private void toolStripComboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -67,7 +74,7 @@ namespace OtobusOtomasyonu
             {
                 case "07:00":
                     FillBusSeat(46, 7);
-                break;
+                    break;
                 case "09:00":
                     FillBusSeat(42, 6);
                     break;
@@ -77,9 +84,34 @@ namespace OtobusOtomasyonu
                 case "20:00":
                     FillBusSeat(54, 8);
                     break;
-               
             }
+        }
 
+        private void bayToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Rent(Color.Blue);
+        }
+
+        private void bayanToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Rent(Color.Pink);
+        }
+
+        private void Rent(Color color)
+        {
+            RegisterForm registerForm = new RegisterForm();
+            DialogResult result = registerForm.ShowDialog();
+
+            if (result == DialogResult.OK)
+            {
+                ListViewItem item = new ListViewItem();
+                item.Text = clicked.Text;
+                item.SubItems.Add(registerForm.txtName.Text);
+                item.SubItems.Add(registerForm.txtSurname.Text);
+                item.SubItems.Add(registerForm.txtPhone.Text);
+                listView1.Items.Add(item);
+            }
+            clicked.BackColor = color;
         }
     }
 }
