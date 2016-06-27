@@ -28,10 +28,13 @@ namespace Event_Delegate_Example
             Student student = new Student();
             student.Name = txbName.Text;
             student.Surname = txbSurname.Text;
-            student.Midterm = Convert.ToDouble(txbMidterm.Text);
-            student.Final = Convert.ToDouble(txbFinal.Text);
+
+            //önce event'ları atayayım. Çünkü vize ve final'e bir şey set edildiği anda event çalışacak.
             student.Pass += Student_Pass;
             student.Fail += Student_Fail;
+            student.Midterm = Convert.ToDouble(txbMidterm.Text);
+            student.Final = Convert.ToDouble(txbFinal.Text);
+           
             lbAllStudent.Items.Add(student);
 
         }
