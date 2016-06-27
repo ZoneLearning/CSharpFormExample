@@ -41,12 +41,16 @@ namespace Event_Delegate_Example
 
         private void Student_Fail(object sender, PassFailEventArgs e)
         {
+            //hem vize hem de final'de event handler 2 kere çağrılıyor. Listeye 2 kere ekliyor. O yüzden vizede başarısıza düştü ise, finalde de başarısıza düştü ise,ilkini kaldırıp bir daha ekliyor. ( 1 kere eklemek için)
+            lbFailedStudent.Items.Remove(e.NameSurname);
             lbPassedStudent.Items.Remove(e.NameSurname);
             lbFailedStudent.Items.Add(e.NameSurname);
         }
 
         private void Student_Pass(object sender, PassFailEventArgs e)
         {
+            //Yukardaki 2 kere ekleme olayının aynısı için remove metodu eklendi.
+            lbPassedStudent.Items.Remove(e.NameSurname);
             lbFailedStudent.Items.Remove(e.NameSurname);
             lbPassedStudent.Items.Add(e.NameSurname);
         }
