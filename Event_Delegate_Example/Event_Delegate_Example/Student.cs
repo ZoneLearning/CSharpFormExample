@@ -21,16 +21,16 @@ namespace Event_Delegate_Example
 
         public string Name { get; set; }
         public string Surname { get; set; }
-        private int midterm;
-        private int final;
+        private double midterm;
+        private double final;
 
-        public int Midterm
+        public double Midterm
         {
             get { return midterm; }
             set { midterm = value; StateControl(); }
         }
 
-        public int Final
+        public double Final
         {
             get { return final; }
             set { final = value; StateControl(); }
@@ -61,6 +61,11 @@ namespace Event_Delegate_Example
         //Ortalama hesaplandıgı, degistigi zaman. Midterm ve Final'a a deger atandıgı zaman.
         public event PassFailEventHandler Pass;
         public event PassFailEventHandler Fail;
+
+        public override string ToString()
+        {
+            return Name + " " + Surname + " " + Average;
+        }
 
     }
 }
