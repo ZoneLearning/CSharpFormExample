@@ -20,8 +20,22 @@ namespace Event_Delegate_Example
     {
         public string Name { get; set; }
         public string Surname { get; set; }
-        public double Midterm { get; set; }
-        public double Final { get; set; }
+        private int midterm;
+        private int final;
+
+        public int Final
+        {
+            get { return final; }
+            set { final = value; }
+        }
+
+
+        public int Midterm
+        {
+            get { return midterm; }
+            set { midterm = value; }
+        }
+
         public double Average { get { return Midterm * 0.4 + Final * 0.6; } }
 
         //Herhangi bir event olusturabiliyorum, olusturdugum event'e olay baglıyorum.
