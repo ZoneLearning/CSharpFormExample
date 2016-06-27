@@ -12,28 +12,44 @@ namespace Event_Delegate_Example
     //Event argumanı olusturuldu.
     class PassFailEventArgs : EventArgs
     {
-        public string AdSoyad { get; set; }
-        public double Ortalama { get; set; }
+        public string NameSurname { get; set; }
+        public double Average { get; set; }
     }
-
     class Student
     {
+        public static int PASS_POINT = 70;
+
         public string Name { get; set; }
         public string Surname { get; set; }
         private int midterm;
         private int final;
 
-        public int Final
-        {
-            get { return final; }
-            set { final = value; }
-        }
-
-
         public int Midterm
         {
             get { return midterm; }
-            set { midterm = value; }
+            set { midterm = value; StateControl(); }
+        }
+
+        public int Final
+        {
+            get { return final; }
+            set { final = value; StateControl(); }
+        }
+
+        void StateControl()
+        {
+            if (Average >= PASS_POINT)
+            {
+                if(Pass!=null)
+                Pass(this, new PassFailEventArgs { NameSurname = Name + " " + Surname, Average = Average });
+            }
+            else
+            {
+                if (Fail != null)
+                    Fail(this,new PassFailEventArgs { NameSurname = Name + " " + Surname, Average = Average });
+
+            }
+                
         }
 
         public double Average { get { return Midterm * 0.4 + Final * 0.6; } }
