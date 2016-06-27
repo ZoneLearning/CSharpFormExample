@@ -34,7 +34,7 @@ namespace Event_Delegate_Example
             student.Fail += Student_Fail;
             student.Midterm = Convert.ToDouble(txbMidterm.Text);
             student.Final = Convert.ToDouble(txbFinal.Text);
-           
+
             lbAllStudent.Items.Add(student);
 
         }
@@ -53,6 +53,29 @@ namespace Event_Delegate_Example
             lbPassedStudent.Items.Remove(e.NameSurname);
             lbFailedStudent.Items.Remove(e.NameSurname);
             lbPassedStudent.Items.Add(e.NameSurname);
+        }
+
+        private void lbAllStudent_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (lbAllStudent.SelectedItem == null) return;
+            Student selected = (Student)lbAllStudent.SelectedItem;
+            txbName.Text = selected.Name;
+            txbSurname.Text = selected.Surname;
+            txbMidterm.Text = selected.Midterm.ToString();
+            txbFinal.Text = selected.Final.ToString();
+            txbName.Tag = selected;
+        }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            Student selected = (Student)txbName.Tag;
+            selected.Name = txbName.Text;
+            selected.Surname = txbSurname.Text;
+            selected.Midterm = Convert.ToDouble(txbMidterm.Text);
+            selected.Final = Convert.ToDouble(txbFinal.Text);
+            lbAllStudent.Items.Remove(selected);
+            lbAllStudent.Items.Add(selected);
+
         }
     }
 }

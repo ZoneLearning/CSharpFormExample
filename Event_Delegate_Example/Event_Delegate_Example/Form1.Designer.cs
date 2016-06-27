@@ -51,6 +51,7 @@
             this.lbAllStudent.Name = "lbAllStudent";
             this.lbAllStudent.Size = new System.Drawing.Size(120, 290);
             this.lbAllStudent.TabIndex = 0;
+            this.lbAllStudent.SelectedIndexChanged += new System.EventHandler(this.lbAllStudent_SelectedIndexChanged);
             // 
             // lbPassedStudent
             // 
@@ -151,13 +152,13 @@
             // 
             // btnUpdate
             // 
-            this.btnUpdate.Location = new System.Drawing.Point(339, 38);
+            this.btnUpdate.Location = new System.Drawing.Point(333, 38);
             this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(69, 20);
-            this.btnUpdate.TabIndex = 3;
+            this.btnUpdate.Size = new System.Drawing.Size(75, 23);
+            this.btnUpdate.TabIndex = 4;
             this.btnUpdate.Text = "Güncelle";
             this.btnUpdate.UseVisualStyleBackColor = true;
-            this.btnUpdate.Click += new System.EventHandler(this.button1_Click);
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // Form1
             // 
