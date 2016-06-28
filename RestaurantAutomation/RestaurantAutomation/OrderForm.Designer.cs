@@ -58,7 +58,7 @@
             this.Controls.Add(this.flowLayoutPanel1);
             this.Name = "OrderForm";
             this.Text = "OrderForm";
-            this.Load += new System.EventHandler(this.Saloon_Click);
+            this.Load += new System.EventHandler(this.OrderForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

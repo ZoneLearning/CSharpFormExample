@@ -17,6 +17,17 @@ namespace RestaurantAutomation
             InitializeComponent();
         }
 
+        private void OrderForm_Load(object sender, EventArgs e)
+        {
+
+            foreach (Saloon saloon in Saloon.Saloons)
+            {
+                flowLayoutPanel1.Controls.Add(saloon);
+                saloon.Click += Saloon_Click;
+            }
+           
+        }
+
         private void Saloon_Click(object sender, EventArgs e)
         {
             Saloon s = (Saloon)sender;
