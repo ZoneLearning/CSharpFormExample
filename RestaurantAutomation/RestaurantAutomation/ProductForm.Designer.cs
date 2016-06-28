@@ -32,7 +32,7 @@
             this.txtName = new System.Windows.Forms.TextBox();
             this.txtPrice = new System.Windows.Forms.NumericUpDown();
             this.label2 = new System.Windows.Forms.Label();
-            this.lsvProduct = new System.Windows.Forms.ListView();
+            this.lstProduct = new System.Windows.Forms.ListView();
             this.btnAdd = new System.Windows.Forms.Button();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -71,19 +71,19 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "Fiyatı";
             // 
-            // lsvProduct
+            // lstProduct
             // 
-            this.lsvProduct.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.lstProduct.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader1,
             this.columnHeader2});
-            this.lsvProduct.FullRowSelect = true;
-            this.lsvProduct.GridLines = true;
-            this.lsvProduct.Location = new System.Drawing.Point(12, 61);
-            this.lsvProduct.Name = "lsvProduct";
-            this.lsvProduct.Size = new System.Drawing.Size(280, 365);
-            this.lsvProduct.TabIndex = 3;
-            this.lsvProduct.UseCompatibleStateImageBehavior = false;
-            this.lsvProduct.View = System.Windows.Forms.View.Details;
+            this.lstProduct.FullRowSelect = true;
+            this.lstProduct.GridLines = true;
+            this.lstProduct.Location = new System.Drawing.Point(12, 61);
+            this.lstProduct.Name = "lstProduct";
+            this.lstProduct.Size = new System.Drawing.Size(280, 365);
+            this.lstProduct.TabIndex = 3;
+            this.lstProduct.UseCompatibleStateImageBehavior = false;
+            this.lstProduct.View = System.Windows.Forms.View.Details;
             // 
             // btnAdd
             // 
@@ -98,11 +98,12 @@
             // columnHeader1
             // 
             this.columnHeader1.Text = "Adı";
-            this.columnHeader1.Width = 146;
+            this.columnHeader1.Width = 189;
             // 
             // columnHeader2
             // 
             this.columnHeader2.Text = "Fiyatı";
+            this.columnHeader2.Width = 129;
             // 
             // ProductForm
             // 
@@ -110,7 +111,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(304, 438);
             this.Controls.Add(this.btnAdd);
-            this.Controls.Add(this.lsvProduct);
+            this.Controls.Add(this.lstProduct);
             this.Controls.Add(this.txtPrice);
             this.Controls.Add(this.txtName);
             this.Controls.Add(this.label2);
@@ -129,7 +130,7 @@
         private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.NumericUpDown txtPrice;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ListView lsvProduct;
+        private System.Windows.Forms.ListView lstProduct;
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.ColumnHeader columnHeader2;
         private System.Windows.Forms.Button btnAdd;

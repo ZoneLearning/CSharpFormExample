@@ -9,12 +9,23 @@ namespace RestaurantAutomation
 {
     class Product
     {
+        public Product()
+        {
+            list.Add(this);
+        }
+        public Product(string name,decimal price)
+        {
+            Name = name;
+            price = Price;
+            list.Add(this);
+        }
+
         public string Name { get; set; }
         public decimal Price { get; set; }
 
         public static List<Product> list = new List<Product>();
 
-        public ListViewItem createList()
+        public ListViewItem getProductList()
         {
             ListViewItem list = new ListViewItem();
             list.Text = Name;

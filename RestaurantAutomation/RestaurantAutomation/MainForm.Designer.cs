@@ -65,6 +65,7 @@
             this.salonToolStripMenuItem.Name = "salonToolStripMenuItem";
             this.salonToolStripMenuItem.Size = new System.Drawing.Size(48, 20);
             this.salonToolStripMenuItem.Text = "Salon";
+            this.salonToolStripMenuItem.Click += new System.EventHandler(this.SaloonToolStripMenuItem_Click);
             // 
             // MainForm
             // 

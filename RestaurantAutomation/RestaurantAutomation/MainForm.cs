@@ -24,5 +24,12 @@ namespace RestaurantAutomation
             productForm.Show();
 
         }
+
+        private void SaloonToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SaloonForm saloonForm = new SaloonForm();
+            saloonForm.MdiParent = this;
+            saloonForm.Show();
+        }
     }
 }
