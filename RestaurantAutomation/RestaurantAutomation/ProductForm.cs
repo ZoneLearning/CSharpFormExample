@@ -19,10 +19,13 @@ namespace RestaurantAutomation
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            ListViewItem item = new ListViewItem();
-            item.Text = txtName.Text;
-            item.SubItems.Add(txtPrice.Text);
-            lsvProduct.Items.Add(item);
+            Product product = new Product();
+            product.Name = txtName.Text;
+            product.Price = txtPrice.Value;
+
+            Product.list.Add(product);
+
+            lsvProduct.Items.Add(product.createList());
         }
     }
 }
