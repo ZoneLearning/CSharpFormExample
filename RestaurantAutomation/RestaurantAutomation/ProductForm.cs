@@ -10,19 +10,19 @@ using System.Windows.Forms;
 
 namespace RestaurantAutomation
 {
-    public partial class MainForm : Form
+    public partial class ProductForm : Form
     {
-        public MainForm()
+        public ProductForm()
         {
             InitializeComponent();
         }
 
-        private void ProductToolStripMenuItem_Click(object sender, EventArgs e)
+        private void btnAdd_Click(object sender, EventArgs e)
         {
-            ProductForm productForm = new ProductForm();
-            productForm.MdiParent = this;
-            productForm.Show();
-
+            ListViewItem item = new ListViewItem();
+            item.Text = txtName.Text;
+            item.SubItems.Add(txtPrice.Text);
+            lsvProduct.Items.Add(item);
         }
     }
 }
