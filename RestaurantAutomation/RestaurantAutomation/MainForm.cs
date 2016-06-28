@@ -31,5 +31,13 @@ namespace RestaurantAutomation
             saloonForm.MdiParent = this;
             saloonForm.Show();
         }
+
+        private void OrderToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            OrderForm orderForm = new OrderForm();
+            orderForm.MdiParent = this;
+            orderForm.Show();
+
+        }
     }
 }

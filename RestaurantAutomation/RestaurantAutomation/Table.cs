@@ -3,12 +3,32 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace RestaurantAutomation
 {
-    class Table
+    public class Table:Button
     {
-        public string Code { get; set; }
+        public Table()
+        {
+            this.Width = 70;
+            this.Height = 70;
+        }
+
+        private string code;
+        public string Code
+        {
+            get
+            {
+                return code;
+            }
+
+            set
+            {
+                code = this.Text = value;
+            }
+        }
+
         private string customerName;
 
         public string CustomerName
@@ -31,13 +51,27 @@ namespace RestaurantAutomation
         public bool isReserved { get; set; }
         public bool isFull { get; set; }
 
-        List<Product> Products = new List<Product>();
+        List<Product> _Products = new List<Product>();
 
-        public decimal TotalPrice
+        public List<Product> Products
         {
             get
             {
-                decimal sum = 0;
+                return _Products;
+            }
+
+            set
+            {
+                _Products = value;
+            }
+        }
+
+        public decimal TotalPrice
+        {
+        
+            get
+            {
+               decimal sum = 0;
 
                 foreach (Product item in Products)
                 {
@@ -46,6 +80,7 @@ namespace RestaurantAutomation
                 return sum;
             }
         }
+
 
     }
 }

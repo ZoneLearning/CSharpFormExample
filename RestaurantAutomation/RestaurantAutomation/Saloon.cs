@@ -7,11 +7,16 @@ using System.Windows.Forms;
 
 namespace RestaurantAutomation
 {
-    class Saloon
+   public class Saloon:Button
     {
+        public Saloon()
+        {
+
+        }
+
         public Saloon(string name, int numberOfTable, string tablePrefix)
         {
-            name = Name;
+            SaloonName = name;
             Prefix = tablePrefix;
             for (int i = 1; i <= numberOfTable; i++)
             {
@@ -19,14 +24,15 @@ namespace RestaurantAutomation
                 t.Code = string.Format("{0}{1}", tablePrefix, i);
                 this.Tables.Add(t);
             }
+
+            this.Text = name;
+            this.Width = 100;
+            this.Height = 100;
         }
-        public string Name { get; set; }
+        public string SaloonName { get; set; }
         public string Prefix { get; set; }
 
         private static List<Saloon> _Saloons = new List<Saloon>();
-
-        private List<Table> tables = new List<Table>();
-
         public static List<Saloon> Saloons
         {
             get
@@ -39,6 +45,8 @@ namespace RestaurantAutomation
                 _Saloons = value;
             }
         }
+
+        private List<Table> tables = new List<Table>();
 
         public List<Table> Tables
         {
@@ -56,7 +64,7 @@ namespace RestaurantAutomation
         public ListViewItem getSaloonList()
         {
             ListViewItem list = new ListViewItem();
-            list.Text = Name;
+            list.Text = SaloonName;
             list.SubItems.Add(tables.Count.ToString());
             list.SubItems.Add(Prefix);
 

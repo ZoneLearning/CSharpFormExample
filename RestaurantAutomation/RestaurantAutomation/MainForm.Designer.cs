@@ -52,6 +52,7 @@
             this.siparişToolStripMenuItem.Name = "siparişToolStripMenuItem";
             this.siparişToolStripMenuItem.Size = new System.Drawing.Size(53, 20);
             this.siparişToolStripMenuItem.Text = "Sipariş";
+            this.siparişToolStripMenuItem.Click += new System.EventHandler(this.OrderToolStripMenuItem_Click);
             // 
             // ürünToolStripMenuItem
             // 

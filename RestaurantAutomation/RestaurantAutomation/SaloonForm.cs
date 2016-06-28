@@ -20,12 +20,16 @@ namespace RestaurantAutomation
         private void btnTableAdd_Click(object sender, EventArgs e)
         {
             Saloon saloon = new Saloon(txtSaloonName.Text, (int)txtNumberOfTable.Value, txtPrefixOfTable.Text);
-            saloon.Name = txtSaloonName.Text;
 
             Saloon.Saloons.Add(saloon);
 
             lstTables.Items.Add(saloon.getSaloonList());
 
+        }
+
+        private void SaloonForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            this.Controls.Clear();
         }
     }
 }

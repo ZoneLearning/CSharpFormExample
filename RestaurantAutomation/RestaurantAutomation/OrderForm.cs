@@ -16,5 +16,15 @@ namespace RestaurantAutomation
         {
             InitializeComponent();
         }
+
+        private void Saloon_Click(object sender, EventArgs e)
+        {
+            Saloon s = (Saloon)sender;
+            Order_TableListForm o_tlf = new Order_TableListForm();
+
+            o_tlf.MdiParent = this.MdiParent;
+            o_tlf.Saloon = s;
+            o_tlf.Show();
+        }
     }
 }

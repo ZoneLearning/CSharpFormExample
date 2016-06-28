@@ -52,6 +52,18 @@
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="OrderForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OrderForm.Designer.cs">
+      <DependentUpon>OrderForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Order_TableListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Order_TableListForm.Designer.cs">
+      <DependentUpon>Order_TableListForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Product.cs" />
     <Compile Include="ProductForm.cs">
       <SubType>Form</SubType>
@@ -68,9 +80,23 @@
     <Compile Include="SaloonForm.Designer.cs">
       <DependentUpon>SaloonForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Table.cs" />
+    <Compile Include="Table.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="TableDetailForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TableDetailForm.Designer.cs">
+      <DependentUpon>TableDetailForm.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OrderForm.resx">
+      <DependentUpon>OrderForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Order_TableListForm.resx">
+      <DependentUpon>Order_TableListForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ProductForm.resx">
       <DependentUpon>ProductForm.cs</DependentUpon>
@@ -86,6 +112,9 @@
     </Compile>
     <EmbeddedResource Include="SaloonForm.resx">
       <DependentUpon>SaloonForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TableDetailForm.resx">
+      <DependentUpon>TableDetailForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

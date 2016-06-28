@@ -7,17 +7,16 @@ using System.Windows.Forms;
 
 namespace RestaurantAutomation
 {
-    class Product
+  public  class Product
     {
         public Product()
         {
-            list.Add(this);
         }
         public Product(string name,decimal price)
         {
             Name = name;
-            price = Price;
-            list.Add(this);
+            Price = price;
+            //list.Add(this);
         }
 
         public string Name { get; set; }
@@ -27,10 +26,10 @@ namespace RestaurantAutomation
 
         public ListViewItem getProductList()
         {
-            ListViewItem list = new ListViewItem();
-            list.Text = Name;
-            list.SubItems.Add(Price.ToString("C2"));
-            return list;
+            ListViewItem li = new ListViewItem();
+            li.Text = Name;
+            li.SubItems.Add(Price.ToString("C2"));
+            return li;
         }
              
     }
